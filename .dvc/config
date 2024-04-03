@@ -1,2 +1,6 @@
+[core]
+    remote = temp
 ['remote "new"']
+    url = ../local
+['remote "temp"']
     url = ../local

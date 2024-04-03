@@ -5,7 +5,7 @@ stages:
     deps:
     - path: code/download.py
       hash: md5
-      md5: b64741d40f6f09a6969784f116aaeb00
+      md5: a0b4fee6f0df6a2d55adaec14054add9
       size: 2205
     params:
       params.yaml:
@@ -14,12 +14,12 @@ stages:
         data_source.output: 
           C:/Users/sriva/OneDrive/Documents/Github/Assignment4_BDL/Climate_dataset{year}.html
         data_source.temp_dir: C:/Users/sriva/OneDrive/Documents/Github/Assignment4_BDL/data
-        data_source.year: 2020
+        data_source.year: 2019
     outs:
     - path: data
       hash: md5
-      md5: 5212f70b00850738cdc5229fe2160c2f.dir
-      size: 144285931
+      md5: ab8b93c19b497566387895339b70a35d.dir
+      size: 143960380
       nfiles: 3
   prepare:
     cmd: python code/prepare.py
@@ -30,8 +30,8 @@ stages:
       size: 1983
     - path: data
       hash: md5
-      md5: 5212f70b00850738cdc5229fe2160c2f.dir
-      size: 144285931
+      md5: ab8b93c19b497566387895339b70a35d.dir
+      size: 143960380
       nfiles: 3
     params:
       params.yaml:
@@ -40,8 +40,8 @@ stages:
     outs:
     - path: prepare_data
       hash: md5
-      md5: 0f3bd7fcbfacea662eec23126715f121.dir
-      size: 8842
+      md5: ad212a80331d946c583c2d2801ebefb7.dir
+      size: 8843
       nfiles: 6
   process:
     cmd: python code/process.py
@@ -52,13 +52,13 @@ stages:
       size: 2808
     - path: data
       hash: md5
-      md5: 5212f70b00850738cdc5229fe2160c2f.dir
-      size: 144285931
+      md5: ab8b93c19b497566387895339b70a35d.dir
+      size: 143960380
       nfiles: 3
     - path: prepare_data
       hash: md5
-      md5: 0f3bd7fcbfacea662eec23126715f121.dir
-      size: 8842
+      md5: ad212a80331d946c583c2d2801ebefb7.dir
+      size: 8843
       nfiles: 6
     params:
       params.yaml:
@@ -68,8 +68,8 @@ stages:
     outs:
     - path: process_data
       hash: md5
-      md5: c25962aea11e9b8810960b2eaf611db9.dir
-      size: 3315
+      md5: 5347738a7afbec0900308236d9099f0b.dir
+      size: 3247
       nfiles: 3
   evaluate:
     cmd: python code/evaluate.py
@@ -80,13 +80,13 @@ stages:
       size: 2089
     - path: prepare_data
       hash: md5
-      md5: 0f3bd7fcbfacea662eec23126715f121.dir
-      size: 8842
+      md5: ad212a80331d946c583c2d2801ebefb7.dir
+      size: 8843
       nfiles: 6
     - path: process_data
       hash: md5
-      md5: c25962aea11e9b8810960b2eaf611db9.dir
-      size: 3315
+      md5: 5347738a7afbec0900308236d9099f0b.dir
+      size: 3247
       nfiles: 3
     params:
       params.yaml:
@@ -96,6 +96,6 @@ stages:
     outs:
     - path: output
       hash: md5
-      md5: af006b61bf5f4c5260b6f8b01f335296.dir
-      size: 272
+      md5: 8b18d2fd4e09ed44eece7be41439a8d8.dir
+      size: 271
       nfiles: 3
