@@ -5,8 +5,8 @@ stages:
     deps:
     - path: code/download.py
       hash: md5
-      md5: a0b4fee6f0df6a2d55adaec14054add9
-      size: 2205
+      md5: 16f3f87269dff308c57814e2584d3128
+      size: 2625
     params:
       params.yaml:
         data_source.base_url: https://www.ncei.noaa.gov/data/local-climatological-data/access/
@@ -26,8 +26,8 @@ stages:
     deps:
     - path: code/prepare.py
       hash: md5
-      md5: d7275d7fc82dd83149f2a61bb53c02a3
-      size: 1983
+      md5: 0f58e5539ac75ca1a42ac378ea88dc39
+      size: 1969
     - path: data
       hash: md5
       md5: a9d56fae77479d0c473db98ea2c7bf59.dir
@@ -48,8 +48,8 @@ stages:
     deps:
     - path: code/process.py
       hash: md5
-      md5: 1a6c7c84527b839977d4c4e4bee7b220
-      size: 2808
+      md5: 3e995a1682518754b63c8284f2dee89b
+      size: 2997
     - path: data
       hash: md5
       md5: a9d56fae77479d0c473db98ea2c7bf59.dir
@@ -76,8 +76,8 @@ stages:
     deps:
     - path: code/evaluate.py
       hash: md5
-      md5: ffef48de02acc33789ac6d8e74286d88
-      size: 2089
+      md5: e0dcc693d64baed07cbde8ab793452cc
+      size: 2497
     - path: prepare_data
       hash: md5
       md5: 28edc9f34096e4827de44ab23a5a4ee2.dir
@@ -96,6 +96,6 @@ stages:
     outs:
     - path: output
       hash: md5
-      md5: 1106d637d5926d35e492219ee1354839.dir
+      md5: 80771a05eff8b39c63963ddf5fcf9060.dir
       size: 908
       nfiles: 10
