@@ -5,22 +5,22 @@ stages:
     deps:
     - path: code/download.py
       hash: md5
-      md5: a0b4fee6f0df6a2d55adaec14054add9
+      md5: b64741d40f6f09a6969784f116aaeb00
       size: 2205
     params:
       params.yaml:
         data_source.base_url: https://www.ncei.noaa.gov/data/local-climatological-data/access/
-        data_source.max_files: 10
+        data_source.max_files: 3
         data_source.output: 
           C:/Users/sriva/OneDrive/Documents/Github/Assignment4_BDL/Climate_dataset{year}.html
         data_source.temp_dir: C:/Users/sriva/OneDrive/Documents/Github/Assignment4_BDL/data
-        data_source.year: 2022
+        data_source.year: 2020
     outs:
     - path: data
       hash: md5
-      md5: a9d56fae77479d0c473db98ea2c7bf59.dir
-      size: 480004571
-      nfiles: 10
+      md5: 5212f70b00850738cdc5229fe2160c2f.dir
+      size: 144285931
+      nfiles: 3
   prepare:
     cmd: python code/prepare.py
     deps:
@@ -30,9 +30,9 @@ stages:
       size: 1983
     - path: data
       hash: md5
-      md5: a9d56fae77479d0c473db98ea2c7bf59.dir
-      size: 480004571
-      nfiles: 10
+      md5: 5212f70b00850738cdc5229fe2160c2f.dir
+      size: 144285931
+      nfiles: 3
     params:
       params.yaml:
         data_prepare.dest_folder: C:/Users/sriva/OneDrive/Documents/Github/Assignment4_BDL/prepare_data
@@ -40,9 +40,9 @@ stages:
     outs:
     - path: prepare_data
       hash: md5
-      md5: 28edc9f34096e4827de44ab23a5a4ee2.dir
-      size: 29178
-      nfiles: 20
+      md5: 0f3bd7fcbfacea662eec23126715f121.dir
+      size: 8842
+      nfiles: 6
   process:
     cmd: python code/process.py
     deps:
@@ -52,14 +52,14 @@ stages:
       size: 2808
     - path: data
       hash: md5
-      md5: a9d56fae77479d0c473db98ea2c7bf59.dir
-      size: 480004571
-      nfiles: 10
+      md5: 5212f70b00850738cdc5229fe2160c2f.dir
+      size: 144285931
+      nfiles: 3
     - path: prepare_data
       hash: md5
-      md5: 28edc9f34096e4827de44ab23a5a4ee2.dir
-      size: 29178
-      nfiles: 20
+      md5: 0f3bd7fcbfacea662eec23126715f121.dir
+      size: 8842
+      nfiles: 6
     params:
       params.yaml:
         data_prepare.dest_folder: C:/Users/sriva/OneDrive/Documents/Github/Assignment4_BDL/prepare_data
@@ -68,9 +68,9 @@ stages:
     outs:
     - path: process_data
       hash: md5
-      md5: c5f40746946b9f5542a946fba0ade67a.dir
-      size: 10450
-      nfiles: 10
+      md5: c25962aea11e9b8810960b2eaf611db9.dir
+      size: 3315
+      nfiles: 3
   evaluate:
     cmd: python code/evaluate.py
     deps:
@@ -80,14 +80,14 @@ stages:
       size: 2089
     - path: prepare_data
       hash: md5
-      md5: 28edc9f34096e4827de44ab23a5a4ee2.dir
-      size: 29178
-      nfiles: 20
+      md5: 0f3bd7fcbfacea662eec23126715f121.dir
+      size: 8842
+      nfiles: 6
     - path: process_data
       hash: md5
-      md5: c5f40746946b9f5542a946fba0ade67a.dir
-      size: 10450
-      nfiles: 10
+      md5: c25962aea11e9b8810960b2eaf611db9.dir
+      size: 3315
+      nfiles: 3
     params:
       params.yaml:
         data_prepare.dest_folder: C:/Users/sriva/OneDrive/Documents/Github/Assignment4_BDL/prepare_data
@@ -96,6 +96,6 @@ stages:
     outs:
     - path: output
       hash: md5
-      md5: 1106d637d5926d35e492219ee1354839.dir
-      size: 908
-      nfiles: 10
+      md5: af006b61bf5f4c5260b6f8b01f335296.dir
+      size: 272
+      nfiles: 3
